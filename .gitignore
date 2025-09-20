@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+
+# Django stuff
+db.sqlite3
+*.log
+staticfiles/
+media/
+
+# Datasets and outputs
+CelebDataset/
+Dataset/
+Image/
+output/
+testImages/
+model/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Compiled / temporary files
+*.egg-info/
+*.bak
+*.swp
+
+# Docs and other big files
+*.docx
+*.pdf
+
+# Windows batch/scripts (if local only)
+*.bat
