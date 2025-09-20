@@ -1,0 +1,115 @@
+{% load static %}
+<html>
+<head>
+    <title>DCGAN - Training Results</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #wrapper {
+            width: 80%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        #header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        #header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .navbar {
+            margin-top: 20px;
+            background: #444;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            background: #666;
+            border-radius: 5px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .result-text {
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            margin-top: 20px;
+        }
+        .back-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #008CBA;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .back-button a:hover {
+            background: #005f75;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>Human Faces Generation using DCGAN</h1>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="navbar">
+            <a href="{% url 'TrainModel' %}">Train & Load DCGAN</a>
+            <a href="{% url 'HumanFaces' %}">Human Faces Generation</a>
+            <a href="{% url 'TexttoImage' %}">Text to Image</a>
+            <a href="{% url 'index' %}">Logout</a>
+        </div>
+
+        <!-- Display Training Results -->
+        <div class="content">
+            <p class="result-text">{{ data|safe }}</p>
+
+            <!-- Training Graph -->
+            {% if img %}
+                <img src="data:image/png;base64,{{ img }}" alt="Training Accuracy & Loss Graph">
+            {% else %}
+                <p>No training graph available.</p>
+            {% endif %}
+
+            <!-- Back Button -->
+            <div class="back-button">
+                <a href="{% url 'TrainModel' %}">Back to Training</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

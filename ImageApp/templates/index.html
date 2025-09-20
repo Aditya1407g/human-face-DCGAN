@@ -1,0 +1,84 @@
+{% load static %}
+<html>
+<head>
+    <title>DCGAN - Human Face Generation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background: #575757;
+            border-radius: 5px;
+        }
+        .hero {
+            padding: 50px;
+        }
+        .hero h1 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .content img {
+            width: 60%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'AdminLogin' %}">User Login</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Human Faces Generation using DCGAN<br><br></h1>
+		<p>  
+        Explore how Deep Convolutional Generative Adversarial Networks (DCGAN) create realistic human faces from scratch.</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="content">
+        <img src="{% static 'images/allubhai.jpg' %}" alt="DCGAN Demo Image">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        
+    </div>
+
+</body>
+</html>

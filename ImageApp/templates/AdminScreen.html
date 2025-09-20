@@ -1,0 +1,82 @@
+{% load static %}
+<html>
+<head>
+    <title>DCGAN - Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background: #575757;
+            border-radius: 5px;
+        }
+        .content-container {
+            margin-top: 40px;
+            padding: 20px;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .content-container h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{% url 'TrainModel' %}">Train & Load DCGAN</a>
+        <a href="{% url 'HumanFaces' %}">Human Faces Generation</a>
+        <a href="{% url 'TexttoImage' %}">Text to Image</a>
+        <a href="{% url 'index' %}">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-container">
+        {% if data %}
+            <h3>{{ data|safe }}</h3>
+        {% else %}
+            <h3>Welcome to the DCGAN Dashboard</h3>
+        {% endif %}
+        <p>
+            Human Faces Generation using Deep Convolutional GANs (DCGAN). This system allows you to train models,
+            generate synthetic human faces, and convert text descriptions into images.
+        </p>
+    </div>
+
+    
+
+</body>
+</html>
