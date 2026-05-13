@@ -1,24 +1,17 @@
-# DCGAN Project
+# DCGAN — Human Face Generation
 
-This is an implementation of a Deep Convolutional GAN (DCGAN) using PyTorch/TensorFlow and Django for the web interface.
-It uses **PyTorch** and trained on the CelebA dataset.
+**Status:** 📦 Archived. Learning project from my exploration of generative models.
 
-## Project Structure
-- `DCGAN.py` : Main GAN training script
-- `ImageApp/` : Django app
-- `tools/` : Utility scripts
-- `output/` : Generated images (ignored in git)
-- `Dataset/`, `CelebDataset/` : Training datasets (ignored in git)
+A PyTorch implementation of a Deep Convolutional GAN trained on the CelebA dataset, with a Django interface for image generation. Built to learn GAN architecture and training dynamics end-to-end.
 
-## 🚀 Features
-- DCGAN architecture (Generator + Discriminator)
-- Training on CelebA dataset
-- Generates realistic human face images
-- Organized output pipeline
+## What I learned
+- DCGAN architecture: Generator/Discriminator design, transposed convolutions, batch norm placement
+- Training dynamics of adversarial networks — mode collapse, balancing G/D loss, learning rate sensitivity
+- Wrapping ML models behind a Django web interface
+- Why GANs are notoriously hard to train in practice
 
+## Tech
+PyTorch · Django · CelebA dataset · Python
 
-## Setup
-```bash
-git clone https://github.com/Aditya1407g/human-face-DCGAN.git
-cd your-repo-name
-pip install -r requirements.txt
+## Why archived
+This was a learning project and the trained model doesn't produce high-quality outputs. Rather than overstate what it does, I'm archiving it as-is. My current focus is backend engineering — see my [URL shortener project] *(link coming soon)*.
